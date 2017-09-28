@@ -1,0 +1,7 @@
+1 read book
+0 feed dogs
+1 wash car
+1 homework
+0 home work 
+0 home work 
+0 home work 

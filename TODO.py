@@ -10,7 +10,12 @@ def check_user_input(us_input):
     elif len(us_input) == 2:
         return action_operator(us_input[1], "")
     elif len(us_input) == 3:
-        return action_operator(user_input[1], us_input[2])
+        return action_operator(us_input[1], us_input[2])
+    elif len(us_input) >= 3:
+        task_name_string = ""
+        for i in range(2,len(us_input)):
+            task_name_string += us_input[i]+" "
+        return action_operator(us_input[1], task_name_string)
     
     
 def action_operator(us_com, user_string):
