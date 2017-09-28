@@ -22,12 +22,25 @@ def action_operator(us_com, user_string):
     if us_com == "-l":
         file_operation.get_list()
     elif us_com == "-a":
-        file_operation.add_to_list(user_string)
-    elif us_com == "-r":
-        file_operation.remove_from_list(int(user_string))
-    elif us_com == "-c":
-        file_operation.complete_task(int(user_string))
+        if user_string == "":
+            print("Unable to add: no task provided")
+        else:
+            file_operation.add_to_list(user_string)
+    try:
+        if user_string == "":
+            return print("Unable to remove: no index provided")
+        if (int(user_string)) > file_operation.get_len_of_file():
+            return print("Unable to remove: index is out of bound")
+        else:      
+            if us_com == "-r":
+                file_operation.remove_from_list(int(user_string))
+            elif us_com == "-c":
+                file_operation.complete_task(int(user_string))  
+    except ValueError:
+        return print("Unable to remove: index is not a number")    
     else:
-        return print("Use expected keys!")
+        return print("Unsupported argument!\n")
+        print_options()
+        
 
 check_user_input(user_input)

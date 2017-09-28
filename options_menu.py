@@ -1,5 +1,5 @@
 def print_options():
-    print("""
+    return print("""
     Command Line Todo application
     =============================
 

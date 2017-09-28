@@ -12,6 +12,11 @@ def get_list():
         line_text += dict_item["task_name"]
     print(line_text)
 
+def get_len_of_file():
+    dict_list = create_dict_for_file()
+    len_number = len(dict_list)
+    return len_number
+
 
 def add_to_list(task_name):
     dict_list = create_dict_for_file()
